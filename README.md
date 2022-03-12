@@ -6,4 +6,8 @@
 2. Navigate to the folder: `cd spring-boot-twilio-sms`
 3. Replace the Twilio Credential with your own in application.properties
 4. Run the application: `mvn clean spring-boot:run`
-5. Import the POSTMAN Collection 
+5. Import the POSTMAN Collection
+
+### Image Screen shot
+
+Send OTP
