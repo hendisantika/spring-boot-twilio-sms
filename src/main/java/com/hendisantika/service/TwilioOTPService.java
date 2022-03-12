@@ -49,4 +49,13 @@ public class TwilioOTPService {
         }
         return Mono.just(passwordResetResponseDto);
     }
+
+    public Mono<String> validateOTP(String userInputOtp, String userName) {
+        if (userInputOtp.equals(otpMap.get(userName))) {
+            otpMap.remove(userName, userInputOtp);
+            return Mono.just("Valid OTP please proceed with your transaction !");
+        } else {
+            return Mono.error(new IllegalArgumentException("Invalid otp please retry !"));
+        }
+    }
 }
