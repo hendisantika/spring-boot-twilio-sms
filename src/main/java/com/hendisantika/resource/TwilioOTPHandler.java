@@ -30,4 +30,11 @@ public class TwilioOTPHandler {
                 .flatMap(dto -> ServerResponse.status(HttpStatus.OK)
                         .body(BodyInserters.fromValue(dto)));
     }
+
+    public Mono<ServerResponse> validateOTP(ServerRequest serverRequest) {
+        return serverRequest.bodyToMono(PasswordResetRequestDto.class)
+                .flatMap(dto -> twilioOTPService.validateOTP(dto.getOTP(), dto.getUserName()))
+                .flatMap(dto -> ServerResponse.status(HttpStatus.OK)
+                        .bodyValue(dto));
+    }
 }
