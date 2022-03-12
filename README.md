@@ -11,3 +11,27 @@
 ### Image Screen shot
 
 Send OTP
+
+![Send OTP](img/sendOTP.png "Send OTP")
+
+```shell
+curl --location --request POST 'http://localhost:8080/api/sendOTP' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "phoneNumber": "+6281321411888",
+    "userName": "hendisantika"
+}'
+```
+
+Validate OTP
+
+![Validate OTP](img/validateOTP.png "Validate OTP")
+
+```shell
+curl --location --request POST 'http://localhost:8080/api/validateOTP' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "oneTimePassword": "422464",
+    "userName": "hendisantika"
+}'
+```
