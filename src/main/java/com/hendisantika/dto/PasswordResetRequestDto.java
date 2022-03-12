@@ -15,5 +15,5 @@ import lombok.Data;
 public class PasswordResetRequestDto {
     private String phoneNumber;
     private String userName;
-    private String OTP;
+    private String oneTimePassword;
 }
